@@ -1,14 +1,16 @@
 # Flash-Card
 
 
-📘 Flashcard Web App
+**📘 Flashcard Web App**
+
 A simple, elegant, and responsive Flashcard application built with HTML, CSS, and JavaScript — 
 designed for personal learning and self-quizzing. Add, flip, and delete your own flashcards. 
 All data is stored in your browser using localStorage.
 
 
 
-🚀 Features
+**🚀 Features**
+
 ✅ Add new flashcards with a question and answer
 
 ✅ Flip flashcards (front/back on click)
