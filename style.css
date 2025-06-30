@@ -1,0 +1,143 @@
+body {
+  font-family: Cambria;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 20px;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #dbe6f6, #c5796d); /* Soft pastel gradient */
+  background-attachment: fixed;
+  
+  padding: 20px;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Optional: Floating circles for animated visual background */
+body::before {
+  content: '';
+  position: absolute;
+  
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 20%, transparent 70%) repeat;
+  background-size: 100px 100px;
+  animation: floatBackground 20s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes floatBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+
+/* Ensure content stays above background animation */
+.container, .popup {
+  position: relative;
+  z-index: 1;
+}
+
+.box {
+  background-color: rgba(112, 130, 150, 0.2); /* Blue with 20% opacity */
+  margin: 40px;       /* margin around the box */
+  padding: 20px;      /* padding inside the box */
+  border-radius: 10px; 
+  font-size: 18px;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#flashcards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+.card {
+  width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2); /* transparent white */
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* frosted glass effect */
+  color: #000;
+  border: 1px solid #292121;
+  width: 200px;
+  height: 120px;
+  margin: 60px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+  background-color: #ffe4e1;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 25px 30px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.2);  /* semi-transparent white */
+  backdrop-filter: blur(12px);          /* glass blur */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.popup h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+.popup input {
+  display: block;
+  margin: 12px auto;
+  width: 85%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
+  font-size: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.button-group {
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(12px); 
+  gap: 10px;
+  margin-top: 15px;
+}
+.popup button {
+  display: block;
+  backdrop-filter: blur(12px); 
+  margin: 10px auto;
+}
